@@ -1,0 +1,2 @@
+SELECT orders.OrderID, orders.Date, orders.CustomerID, orders.ProdNumber, orders.Quantity, [product category].CategoryName, products.ProdName, products.Price, customers.CustomerCity, customers.CustomerState
+FROM ([product category] INNER JOIN products ON [product category].[CategoryID] = products.[Category]) INNER JOIN (customers INNER JOIN orders ON customers.[CustomerID] = orders.[CustomerID]) ON products.[ProdNumber] = orders.[ProdNumber];
